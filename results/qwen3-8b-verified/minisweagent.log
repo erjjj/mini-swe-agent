@@ -1,0 +1,21 @@
+2026-01-27 17:59:58,232 - minisweagent - INFO - Loading dataset data/SWE-Bench_Verified, split test...
+2026-01-27 17:59:58,293 - minisweagent - INFO - Instance slice: 500 -> 1 instances
+2026-01-27 17:59:58,295 - minisweagent - INFO - Running on 1 instances...
+2026-01-27 17:59:58,295 - minisweagent - INFO - Loading agent config from '/data01/wangzy/mini-swe-agent/src/minisweagent/config/extra/swebench.yaml'
+2026-01-27 18:00:04,851 - minisweagent.environment - DEBUG - Starting container with command: docker run -d --name minisweagent-3233d528 -w /testbed --rm docker.io/swebench/sweb.eval.x86_64.astropy_1776_astropy-12907:latest sleep 2h
+2026-01-27 18:00:35,539 - minisweagent - ERROR - Error processing instance astropy__astropy-12907: Command '['docker', 'run', '-d', '--name', 'minisweagent-3233d528', '-w', '/testbed', '--rm', 'docker.io/swebench/sweb.eval.x86_64.astropy_1776_astropy-12907:latest', 'sleep', '2h']' returned non-zero exit status 125.
+Traceback (most recent call last):
+  File "/data01/wangzy/mini-swe-agent/src/minisweagent/run/extra/swebench.py", line 145, in process_instance
+    env = get_sb_environment(config, instance)
+  File "/data01/wangzy/mini-swe-agent/src/minisweagent/run/extra/swebench.py", line 88, in get_sb_environment
+    env = get_environment(env_config)
+  File "/data01/wangzy/mini-swe-agent/src/minisweagent/environments/__init__.py", line 32, in get_environment
+    return get_environment_class(environment_class)(**config)
+  File "/data01/wangzy/mini-swe-agent/src/minisweagent/environments/docker.py", line 50, in __init__
+    self._start_container()
+  File "/data01/wangzy/mini-swe-agent/src/minisweagent/environments/docker.py", line 72, in _start_container
+    result = subprocess.run(
+  File "/root/miniconda3/envs/msa/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['docker', 'run', '-d', '--name', 'minisweagent-3233d528', '-w', '/testbed', '--rm', 'docker.io/swebench/sweb.eval.x86_64.astropy_1776_astropy-12907:latest', 'sleep', '2h']' returned non-zero exit status 125.
+2026-01-27 18:00:35,546 - minisweagent - INFO - Saved trajectory to 'results/qwen3-8b-verified/astropy__astropy-12907/astropy__astropy-12907.traj.json'

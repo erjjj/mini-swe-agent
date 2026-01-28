@@ -1,0 +1,7 @@
+{
+  "astropy__astropy-12907": {
+    "model_name_or_path": "openai/deepseek-v3.2",
+    "instance_id": "astropy__astropy-12907",
+    "model_patch": "Command '['docker', 'run', '-d', '--name', 'minisweagent-3233d528', '-w', '/testbed', '--rm', 'docker.io/swebench/sweb.eval.x86_64.astropy_1776_astropy-12907:latest', 'sleep', '2h']' returned non-zero exit status 125."
+  }
+}
